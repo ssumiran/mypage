@@ -1,0 +1,8 @@
+<p>parent works!</p>
+<section >
+            
+            <p>Output Data From Child: {{ outputFromChildData() }}</p>
+        </section>  
+
+<app-child [inputParentValue]="inputValueToChild()" 
+            (outputChildData)="outputFromChild($event)" />

@@ -1,0 +1,15 @@
+<div class="row">
+    <div class="col-12">
+        <h3>Vowels Finder Project</h3>
+        <p>This project checks if the last letter of each word in a list is a vowel.</p>
+        <p>Input: {{ words() }}</p> <br>
+        <h3>Output: </h3>
+        <ul>
+            @for(word of result(); track $index) {
+            <li> {{ word }}</li>
+            }
+
+            
+        </ul>
+    </div>
+</div>

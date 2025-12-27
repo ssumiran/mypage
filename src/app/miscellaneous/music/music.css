@@ -1,0 +1,15 @@
+.unstopable1-iframe {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    padding-bottom: 56.25%;
+    /* 16:9 ratio */
+    margin: auto;
+}
+
+.unstopable1-iframe iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}

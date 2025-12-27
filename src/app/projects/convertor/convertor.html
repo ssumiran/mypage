@@ -1,0 +1,32 @@
+<div class="container mt-4">
+    <h3 class="mb-3">Convertor Reactive Form</h3>
+
+    <form [formGroup]="userReactiveForm">
+
+
+        <div class="mb-3">
+            <label for="num" class="form-label">Enter a number</label>
+            <input type="number" formControlName="num" class="form-control col-md-3" id="num"> 
+            <div>
+                @if(userReactiveForm.get('num')?.touched || userReactiveForm.get('num')?.dirty){
+                @if(userReactiveForm.get('num')?.errors?.['required']){
+                <span class="text-danger">Number is required.</span>
+                }@else if(userReactiveForm.get('num')?.errors?.['minlength']){
+                <span class="text-danger">Please enter a number</span>
+                }
+                }
+            </div>
+        </div>
+        <div class="col-4">
+
+            <br>
+            <h5 class="text-success">Result: {{ result() }} {{ convertTo }}</h5>
+
+        </div>
+
+        <div class="row" >
+            <button class="btn btn-primary col-md-3 shadow-sm" [disabled]="userReactiveForm.invalid" (click)="convertMiToKm()">Convert Miles to Km</button> 
+            <button class="btn btn-primary col-md-3 shadow-sm" [disabled]="userReactiveForm.invalid" (click)="convertKmToMi()">Convert Km to Miles</button>
+        </div>
+    </form>
+</div>
